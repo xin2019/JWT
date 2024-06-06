@@ -1,4 +1,4 @@
-# SringBoot实现JWT登录
+# SringBoot实现JWT登录（生成token方法在util包下的JWTUtils中）
 #### 前提条件：电脑开启redis和mysql
 #### 项目背景：SrpingBoot项目的登录验证方式想要使用JWT登录，而不是Cookie或者Session
 #### 使用技术栈：SringBoot、Redis、JWT
