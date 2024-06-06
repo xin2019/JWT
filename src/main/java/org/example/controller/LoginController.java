@@ -4,18 +4,19 @@ import org.example.service.LoginService;
 import org.example.vo.R;
 import org.example.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping()
 public class LoginController {
     @Autowired
     private LoginService loginService;
-    @PostMapping()
+    @PostMapping("/login")
     public R login(@RequestBody UserVo userVo){
         return loginService.login(userVo);
+    }
+    @GetMapping("/logout")
+    public R logout(@RequestHeader("Authorization") String token){
+        return loginService.logout(token);
     }
 }

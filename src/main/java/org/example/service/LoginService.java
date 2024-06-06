@@ -8,4 +8,6 @@ import org.springframework.stereotype.Service;
 public interface LoginService {
 
     R login(UserVo userVo);
+
+    R logout(String token);
 }
